@@ -7,7 +7,15 @@ author: Fluidic Team <dev@fluidic.io>
 environment:
   sdk: '>=1.0.0 <2.0.0'
 
-#dependencies:
+dependencies:
+  beaver_demo_package_1:
+    git: https://github.com/fluidic/beaver_demo_package_1.git
+  beaver_demo_package_2:
+    git: https://github.com/fluidic/beaver_demo_package_2.git
+  beaver_demo_package_3:
+    git: https://github.com/fluidic/beaver_demo_package_3.git
+  beaver_demo_package_4:
+    git: https://github.com/fluidic/beaver_demo_package_4.git
 
 dev_dependencies:
   test: '>=0.12.0 <0.13.0'
