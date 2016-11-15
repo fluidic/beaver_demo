@@ -14,8 +14,6 @@ dependencies:
     git: https://github.com/fluidic/beaver_demo_package_2.git
   beaver_demo_package_3:
     git: https://github.com/fluidic/beaver_demo_package_3.git
-  beaver_demo_package_4:
-    git: https://github.com/fluidic/beaver_demo_package_4.git
 
 dev_dependencies:
   test: '>=0.12.0 <0.13.0'
