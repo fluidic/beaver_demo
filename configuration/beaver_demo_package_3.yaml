@@ -1,0 +1,29 @@
+project_name: beaver_demo_package_3
+
+triggers:
+  - name: build_new_commit
+    url: "https://github.com/fluidic/beaver_demo_package_3"
+    type: github
+    events: ["push"]
+    newVM: true
+    task:
+      - name: git
+        args: ["clone", "trigger:url"]
+      - name: pub
+        args: ["--process-working-dir", "beaver_demo_package_3", "get"]
+      - name: pub
+        args: ["--process-working-dir", "beaver_demo_package_3", "run", "test"]
+      - name: mail
+        args: ["dev@fluidic.io"]
+  - name: build_master
+    type: internal
+    newVM: true
+    task:
+      - name: git
+        args: ["clone", "https://github.com/fluidic/beaver_demo_package_3"]
+      - name: pub
+        args: ["--process-working-dir", "beaver_demo", "get"]
+      - name: pub
+        args: ["--process-working-dir", "beaver_demo", "run", "test"]
+      - name: mail
+        args: ["dev@fluidic.io"]

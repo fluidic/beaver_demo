@@ -1,0 +1,15 @@
+project_name: dartdoc
+
+triggers:
+  - name: build_new_commit
+    url: "https://github.com/fluidic/dartdoc"
+    type: github
+    events: ["push"]
+    newVM: true
+    task:
+      - name: git
+        args: ["clone", "trigger:url"]
+      - name: pub
+        args: ["--process-working-dir", "dartdoc", "get"]
+      - name: pub
+        args: ["--process-working-dir", "dartdoc", "run", "test"]
