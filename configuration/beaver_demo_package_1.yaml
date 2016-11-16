@@ -20,9 +20,9 @@ triggers:
     newVM: true
     task:
       - name: version_check
-        args: ["https://github.com/fluidic/beaver_demo_package_1", "0.2.0"]
+        args: ["https://github.com/fluidic/beaver_demo_package_1", "0.1.0"]
       - name: trigger
-        args: ["build_master", "--project-name", "beaver_demo"]
+        args: ["build_master", "--project-name", "beaver_demo_package_1"]
       - name: mail
         args: ["dev@fluidic.io"]
   - name: distribute
@@ -32,10 +32,10 @@ triggers:
       - name: git
         args: ["clone", "https://github.com/fluidic/beaver_demo_package_1"]
       - name: pub
-        args: ["--process-working-dir", "beaver_demo", "get"]
+        args: ["--process-working-dir", "beaver_demo_package_1", "get"]
       - name: pub
-        args: ["--process-working-dir", "beaver_demo", "run", "test"]
+        args: ["--process-working-dir", "beaver_demo_package_1", "run", "test"]
       - name: pub
-        args: ["--process-working-dir", "beaver_demo", "publish", "--dry-run"]
+        args: ["--process-working-dir", "beaver_demo_package_1", "publish", "--dry-run"]
       - name: mail
         args: ["dev@fluidic.io"]

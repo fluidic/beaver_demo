@@ -22,8 +22,8 @@ triggers:
       - name: git
         args: ["clone", "https://github.com/fluidic/beaver_demo_package_3"]
       - name: pub
-        args: ["--process-working-dir", "beaver_demo", "get"]
+        args: ["--process-working-dir", "beaver_demo_package_3", "get"]
       - name: pub
-        args: ["--process-working-dir", "beaver_demo", "run", "test"]
+        args: ["--process-working-dir", "beaver_demo_package_3", "run", "test"]
       - name: mail
         args: ["dev@fluidic.io"]

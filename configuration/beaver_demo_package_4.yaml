@@ -20,11 +20,11 @@ triggers:
     newVM: true
     task:
       - name: version_check
-        args: ["https://github.com/fluidic/beaver_demo_package_4", "0.2.0"]
+        args: ["https://github.com/fluidic/beaver_demo_package_4", "0.1.0"]
       - name: par
         args:
           - name: trigger
-            args: ["build_master", "--project-name", "beaver_demo_package_3"]
+            args: ["build_master", "--project-name", "beaver_demo_package_2"]
           - name: trigger
             args: ["build_master", "--project-name", "beaver_demo_package_3"]
       - name: mail
