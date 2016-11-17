@@ -22,7 +22,7 @@ triggers:
       - name: version_check
         args: ["https://github.com/fluidic/beaver_demo_package_1", "0.1.0"]
       - name: trigger
-        args: ["build_master", "--project-name", "beaver_demo_package_1"]
+        args: ["build_master", "--project-name", "beaver_demo"]
       - name: mail
         args: ["dev@fluidic.io"]
   - name: distribute
