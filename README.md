@@ -1,3 +1,1 @@
 # beaver_demo
-
-test
