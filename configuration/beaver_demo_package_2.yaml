@@ -14,7 +14,7 @@ triggers:
       - name: pub
         args: ["--process-working-dir", "beaver_demo_package_2", "run", "test"]
       - name: mail
-        args: ["dev@fluidic.io"]
+        args: ["tqtestuser@fluidic.io"]
   - name: build_master
     type: internal
     newVM: true
@@ -26,4 +26,4 @@ triggers:
       - name: pub
         args: ["--process-working-dir", "beaver_demo_package_2", "run", "test"]
       - name: mail
-        args: ["dev@fluidic.io"]
+        args: ["tqtestuser@fluidic.io"]

@@ -14,7 +14,7 @@ triggers:
       - name: pub
         args: ["--process-working-dir", "beaver_demo", "run", "test"]
       - name: mail
-        args: ["dev@fluidic.io"]
+        args: ["tqtestuser@fluidic.io"]
   - name: build_master
     type: internal
     newVM: true
@@ -26,7 +26,7 @@ triggers:
       - name: pub
         args: ["--process-working-dir", "beaver_demo", "run", "test"]
       - name: mail
-        args: ["dev@fluidic.io"]
+        args: ["tqtestuser@fluidic.io"]
   - name: daily_build
     type: cron
     newVM: true
@@ -42,7 +42,7 @@ triggers:
       - name: gcloud_storage_upload
         args: ["./beaver_demo/beaver_demo.dart.snapshot", "beaver_demo"]
       - name: mail
-        args: ["dev@fluidic.io"]
+        args: ["tqtestuser@fluidic.io"]
   - name: use_specific_sdk
     type: cron
     newVM: true
@@ -56,7 +56,7 @@ triggers:
       - name: pub
         args: ["run", "test", "--process-working-dir", "beaver_demo", "--pub-path", "dart-sdk/bin/pub"]
       - name: mail
-        args: ["dev@fluidic.io"]
+        args: ["tqtestuser@fluidic.io"]
   - name: make_and_upload_docker_image
     type: cron
     newVM: true
@@ -72,4 +72,4 @@ triggers:
       - name: gcloud_storage_upload
         args: ["./beaver_demo/docker.tar", "beaver_demo"]
       - name: mail
-        args: ["dev@fluidic.io"]
+        args: ["tqtestuser@fluidic.io"]
