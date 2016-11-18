@@ -13,6 +13,10 @@ triggers:
         args: ["--process-working-dir", "beaver_demo", "get"]
       - name: pub
         args: ["--process-working-dir", "beaver_demo", "run", "test"]
+      - name: dart
+        args: ["--snapshot=beaver_demo.dart.snapshot", "example/beaver_demo_example.dart", "--process-working-dir", "beaver_demo"]
+      - name: gcloud_storage_upload
+        args: ["./beaver_demo/beaver_demo.dart.snapshot", "beaver_demo"]
       - name: mail
         args: ["tqtestuser@fluidic.io"]
   - name: build_master
@@ -27,23 +31,7 @@ triggers:
         args: ["--process-working-dir", "beaver_demo", "run", "test"]
       - name: mail
         args: ["tqtestuser@fluidic.io"]
-  - name: daily_build
-    type: cron
-    newVM: true
-    task:
-      - name: git
-        args: ["clone", "https://github.com/fluidic/beaver_demo"]
-      - name: pub
-        args: ["--process-working-dir", "beaver_demo", "get"]
-      - name: pub
-        args: ["--process-working-dir", "beaver_demo", "run", "test"]
-      - name: dart
-        args: ["--snapshot=beaver_demo.dart.snapshot", "example/beaver_demo_example.dart", "--process-working-dir", "beaver_demo"]
-      - name: gcloud_storage_upload
-        args: ["./beaver_demo/beaver_demo.dart.snapshot", "beaver_demo"]
-      - name: mail
-        args: ["tqtestuser@fluidic.io"]
-  - name: use_specific_sdk
+  - name: check_sdk
     type: cron
     newVM: true
     task:
@@ -55,16 +43,8 @@ triggers:
         args: ["get", "--process-working-dir", "beaver_demo", "--pub-path", "dart-sdk/bin/pub"]
       - name: pub
         args: ["run", "test", "--process-working-dir", "beaver_demo", "--pub-path", "dart-sdk/bin/pub"]
-      - name: mail
-        args: ["tqtestuser@fluidic.io"]
-  - name: make_and_upload_docker_image
-    type: cron
-    newVM: true
-    task:
       - name: install_docker
         args: []
-      - name: git
-        args: ["clone", "https://github.com/fluidic/beaver_demo"]
       - name: docker
         args: ["build", "-t", "fluidic/dart-runtime", ".", "--process-working-dir", "beaver_demo"]
       - name: docker
